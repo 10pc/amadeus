@@ -1,0 +1,8 @@
+.invisible {
+    border: none;
+    background-color: transparent;
+    color: transparent;
+    outline: none;
+    cursor: default;
+  }
+  

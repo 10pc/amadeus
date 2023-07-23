@@ -1,0 +1,95 @@
+$black: #000000;
+$dark: #33202a;
+$lighter: #5f5566;
+$white: #f5f4f6;
+$red: #e82e33;
+$yellow: #fcab10;
+$yellow: #EEF46E;
+$grid-square: 0.5px;
+$dark-red: #833f47;
+
+html {
+  transition: 2s;
+}
+
+body {
+  margin: 0;
+}
+
+.amadeusbg2 {
+  z-index: 1;
+  background-image: url(./assets/bg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-position: left;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  overflow: hidden;
+  color: $red;
+  font: 1.3rem Inconsolata, monospace;
+  text-shadow: 0 0 1px #ed484d;
+}
+
+::selection {
+  background: $dark;
+  text-shadow: none;
+}
+
+pre {
+  margin: 0;
+  white-space: pre-wrap;
+  margin-bottom: 80vh;
+  animation: text-blink 0.01s steps(2) infinite;
+}
+
+.wrapper {
+  padding: 2rem;
+  overflow-y: scroll;
+  height: 100%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.grid {
+  z-index: 2;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: red;
+  background-color: transparent;
+  background-size: 45px 45px;
+  background-image:
+    linear-gradient(
+      90deg,
+      $dark-red $grid-square,
+      transparent $grid-square
+    ),
+    linear-gradient(
+      $dark-red $grid-square,
+      transparent $grid-square
+    );
+}
+
+.grid {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.grid.show {
+  opacity: 1;
+}
+
+.boot-logo {
+  z-index: 3;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
