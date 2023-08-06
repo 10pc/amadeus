@@ -25,16 +25,17 @@ function ViktorC() {
   }, [images.length]);
 
   return (
-    <div>
+    <>
+    <div className="viktorchondriacontent">
       <nav className={styles.navbar}>
         <section className={styles.logoContainer}>
           <img className={styles.logo} src={logoImg} alt="Logo" />
         </section>
         <section className={styles.linksContainer}>
-            <Link to="/loading" className={styles.link}>Amadeus</Link>
-          <a href="#link2" className={styles.link}>Tutorial</a>
-          <a href="#link3" className={styles.link}>Youtube</a>
-          <a href="#link3" className={styles.link}>Discord</a>
+            <Link to="/salieri" className={styles.link}>Amadeus</Link>
+          {/* <a href="#link2" className={styles.link}>Tutorial</a> */}
+          <a href="https://www.youtube.com/channel/UCBDEGOJJcms0ucXLpyFI6pg" className={styles.link}>Youtube</a>
+          <a href="https://discord.gg/32habcPdkn" className={styles.link}>Discord</a>
         </section>
       </nav>
       <section className={styles.slider}>
@@ -47,10 +48,14 @@ function ViktorC() {
       </section>
       <section className={styles.bottomText}>
         <p>
-          This is not an official Amadeus Project, everything is made by me, Lokman, just a fellow fan with some free time at night.
+          This is not an official Amadeus Project.
+          <hr />
+          (This page is under construction)
         </p>
       </section>
     </div>
+    <div className="viktorchondriabg"></div>
+    </>
   );
 }
 

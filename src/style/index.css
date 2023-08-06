@@ -5,4 +5,35 @@
     outline: none;
     cursor: default;
   }
-  
+
+.Settings{
+  z-index: 10;
+}
+
+canvas#canvas {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.Chatting{
+  z-index: 2;
+}
+
+.kurisu{
+  display: none;
+}
+
+.viktorchondriacontent{
+  z-index: 100 !important;
+}
+
+.viktorchondriabg{
+  position: fixed;
+  background-color: white;
+  height: 100vh;
+  width: 100vw;
+  left: 0;
+  bottom: 0;
+  z-index: -1 !important;
+}

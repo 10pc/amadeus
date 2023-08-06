@@ -3,6 +3,11 @@ body{-webkit-user-select:none;-moz-user-select:-moz-none;
   caret-color: transparent;
 }
 
+#canvas{
+  height: 100vh;
+  width: 100vw;
+}
+
 .chat{
   display: none;
 }
@@ -217,7 +222,7 @@ code {
     font-family: 'oswald';
     font-weight: 700;
     line-height: 50px; 
-    width: 55%;
+    width: 99%;
     bottom: 7vh;
   }
 
@@ -299,7 +304,6 @@ code {
 
   .SendButton{
     position: fixed;
-
     bottom: 5vh;
     right: 2vh;
     height: 10vh;
@@ -312,16 +316,18 @@ code {
     padding: 0;
     border-style: outset;
     border: 0;
+    display: flex !important; /* <-- Add this line */
+    justify-content: center !important; /* <-- Add this line */
+    align-items: center !important; /* <-- Add this line */
   }
-
 
 
 .lds-spinner {
   color: official;
   display: inline-block;
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: 90%;
+  height: 90%;
 }
 .lds-spinner div {
   transform-origin: 40px 40px;
@@ -336,7 +342,7 @@ code {
   width: 6px;
   height: 18px;
   border-radius: 20%;
-  background: #b84460;
+  background: #fff;
 }
 .lds-spinner div:nth-child(1) {
   transform: rotate(0deg);
@@ -394,7 +400,3 @@ code {
     opacity: 0;
   }
 }
-
-
-
-

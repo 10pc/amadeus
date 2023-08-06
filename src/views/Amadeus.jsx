@@ -5,6 +5,8 @@ import APIKeyInput from '../components/ApiKeyInputs';
 import MessageList from '../components/MessageList';
 import MessageInput from '../components/MessageInput';
 
+import Live2dKurisu from '../components/Live2dKurisu';
+
 const currentDate = new Date().toLocaleString('en-US', {
   weekday: 'long',
   year: 'numeric',
@@ -79,23 +81,24 @@ function Amadeus() {
         setAPI_KEY(userAPIKey);
         };
         
-        const handleSend = async (message) => {
-          console.log("User:", message);
-          const sentTime = new Date().toLocaleString();
-          const newMessage = {
-            message,
-            direction: 'outgoing',
-            sender: "user",
-            username: username,
-            sentTime: sentTime
-          };
-          const newMessages = [...messages, newMessage];
-          setMessages(newMessages);
-          setIsTyping(true);
-          setIsLoading(true);
-          await processMessageToChatGPT(newMessages, sentTime, username);
-          setIsLoading(false);
-        };
+const handleSend = async (message) => {
+  console.log("User:", message);
+  const sentTime = new Date().toLocaleString();
+  const newMessage = {
+    message,
+    direction: 'outgoing',
+    sender: "user",
+    username: username,
+    sentTime: sentTime
+  };
+  const newMessages = [...messages, newMessage];
+  setMessages(newMessages);
+  setIsTyping(true);
+  setIsLoading(true);
+  await processMessageToChatGPT(newMessages, sentTime, username);
+  setIsLoading(false);
+};
+
         
         
         async function processMessageToChatGPT(chatMessages) {
@@ -175,7 +178,7 @@ function Amadeus() {
             const response = await fetch(
               "https://api-inference.huggingface.co/models/mio/amadeus",
               {
-                headers: { Authorization: "Bearer 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" },
+                headers: { Authorization: "Bearer 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" },
                 method: "POST",
                 body: JSON.stringify(payload),
               }
@@ -195,6 +198,9 @@ function Amadeus() {
           }
         }
         
+        const InputValue = (event) => {
+          setMessage(event.target.value);
+        };
         
         return (
         <>
@@ -212,7 +218,7 @@ function Amadeus() {
         <div className="App">
         <div className='chat'>
           <MessageList messages={messages} isTyping={isTyping} lastMessageRef={lastMessageRef} />
-          <MessageInput handleSend={handleSend} />
+
           </div>
           <img className='kurisu' id='kurisu' src={kurisu} alt="Kurisu"></img>
           </div>
@@ -222,10 +228,11 @@ function Amadeus() {
             message={inputMessage}
             setMessage={setInputMessage}
             handleSend={handleSend} 
+            onChange={InputValue}
           />
 
 
-        <button className="SendButton" onClick={() => { handleSend(inputMessage); setInputMessage(''); }}>
+        {/* <button className="SendButton" onClick={() => { handleSend(inputMessage.trim());}}>
           {isLoading ? 
           <div className="lds-spinner">
             <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
@@ -233,9 +240,11 @@ function Amadeus() {
           :
           "送信"
           }
-        </button>
+        </button> */}
 
         </div>
+
+        <Live2dKurisu/>
         </>
         );
         }

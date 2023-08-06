@@ -24,6 +24,7 @@
   gap: 10px;
   width: 80%;
   max-width: 400px;
+  z-index: 2500;
 }
 
 .api-key-container label {
@@ -32,6 +33,7 @@
   margin-bottom: 5px;
   color: #f1d583;
   width: 100%;
+  z-index: 2500;
 }
 
 .api-key-container input {
@@ -44,12 +46,15 @@
   font-size: 14px;
   transition: border-color 0.2s ease;
   color: #f1d583;
+  z-index: 2500;
 }
 
 .api-key-container input:focus {
   border-color: #d36b22;
   outline: none;
+  z-index: 2500;
 }
+
 
 .api-key-container button {
   width: 100%;
@@ -62,22 +67,116 @@
   border-radius: 5px;
   font-size: 14px;
   transition: background-color 0.2s ease;
+  z-index: 2500;
 }
 
 .api-key-container button:hover {
   background-color: #c2561a;
+  z-index: 2500;
 }
 
 .logo_settings {
-  width: 300px;
+  width: 20vh;
   height: auto;
   z-index: 2000;
   position: relative;
   display: block;
   margin: 10vh auto;
 
+
 }
 
 :any-link{
   color: #c2561a;
+  z-index: 2500;
 }
+
+
+
+
+/* ======================================================= */
+
+
+.discord-invite {
+  background-color: rgb(47, 49, 54);
+  border-radius: 4px;
+  box-sizing: border-box;
+  height: 110px;
+  padding: 16px;
+  width: 432px;
+  max-width: 90%;
+  font-family: Whitney, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+.discord-invite-text {
+  block-size: 16px;
+  font-size: 12px;
+  height: 16px;
+  margin-bottom: 12px;
+  margin-top: 0px;
+  text-transform: uppercase;
+  color: rgb(185, 187, 190);
+}
+.discord-invite-body {
+  display: flex;
+  justify-content: center;
+  width: 400px;
+  max-width: 90%;
+}
+.discord-invite-image {
+  background-image: url("https://cdn.discordapp.com/icons/SERVER-ID/SERVER-ICON-HASH.png?size=128");
+  background-position: 50% 50%;
+  background-size: 100% 100%;
+  border-radius: 15px;
+  margin-right: 16px;
+  width: 50px;
+}
+.discord-invite-details {
+  block-size: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 246.2px;
+}
+.discord-invite-name {
+  margin: 0px;
+  color: white;
+ display: flex;
+}
+.discord-invite-verified {
+  color: rgb(114, 137, 218);
+  display: flex;
+  margin-right: 8px;
+}
+.discord-invite-verified-tick {
+  display: flex;
+  position: absolute;
+}
+.discord-invite-verified-tick-svg {
+  color: white;
+}
+
+.discord-invite-online-icon {
+  background-color: rgb(67, 181, 129);
+}
+.discord-invite-offline-icon {
+  background-color: rgb(116, 127, 141);
+}
+.discord-invite-join-button {
+  border-radius: 3px;
+  align-items: center;
+  background-color: rgb(67, 181, 129);
+  block-size: 40px;
+  box-sizing: border-box;
+  color: white;
+  display: flex;
+  inline-size: 77.8px;
+  justify-content: center;
+  margin-left: 10px;
+  padding: 2px 20px;
+  text-decoration: none;
+}
+.discord-invite-count {
+  font-size: 12px;
+  margin-right: 8px;
+} 
